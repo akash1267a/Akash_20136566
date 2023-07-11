@@ -1,0 +1,59 @@
+package com;
+
+
+import java.util.*;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+public class Register2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public Register2() {
+        super();
+      
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
+		int SID = Integer.parseInt(request.getParameter("SID"));
+		String SNAME = request.getParameter("SNAME");
+		int phone = Integer.parseInt(request.getParameter("phone"));
+		int Marks = Integer.parseInt(request.getParameter("Marks"));
+		String Branch = request.getParameter("Branch");
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3303/igt","root","1234");
+			PreparedStatement pstmt=con.prepareStatement("insert into Student values(?,?,?,?,?)");
+			pstmt.setInt(1, SID);
+			pstmt.setString(2, SNAME);
+			pstmt.setInt(3, phone);
+			pstmt.setInt(4,Marks);
+			pstmt.setString(5, Branch);
+			pstmt.execute();
+			System.out.println("Congrats You are successfully Registered");
+		}catch (Exception e){
+			System.out.println(e);
+			
+		}
+		
+		
+		
+	}
+
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package com;
+
+public class Customer {
+	private int sid;
+	private String name;
+	private String place;
+	private String pan;
+
+
+}

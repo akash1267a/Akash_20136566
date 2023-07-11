@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = Register>
+	Id : <input type="text" name = "SID"><br>
+	Name: <input type = "text" name = "SNAME"><br>
+	Phone: <input type ="text" name = "phone"><br>
+	Marks: <input type="text" name="Marks"><br>
+	Branch: <input type="text" name="Branch"><br>
+	<input type="submit" value="REGISTER">
+	
+	
+</form>
+</body>
+</html>

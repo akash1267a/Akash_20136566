@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action = "emi.jsp" method="post">
+	
+	amount: <input type = "text" name = "amount"><br>
+	rate: <input type = "text" name = "rate"><br>
+	tenure: <input type = "text" name = "tenure"><br>
+	
+	<button type ="Submit">Calculate</button>
+	
+	</form>
+
+</body>
+</html>
